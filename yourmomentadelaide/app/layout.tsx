@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Your Moment Adelaide",
-  description: "We Style the Room. You Live the Moment",
+  description: "Hotel Decoration based in Adelaide. We Style the Room. You Live the Moment",
 };
 
 export default function RootLayout({
