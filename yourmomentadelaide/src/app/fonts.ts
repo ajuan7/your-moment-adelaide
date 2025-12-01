@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 export const theSeasons = localFont({
   src: [
     {
-      path: "../public/fonts/theseasons-reg.otf",
+      path: "../../public/fonts/theseasons-reg.otf",
       weight: "400",
       style: "normal",
     },
