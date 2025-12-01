@@ -26,17 +26,17 @@ export default function Home() {
               <p className="-mt-25 text-zinc-300 space-y-1">
                 We style the room. You live the moment.
               </p>
-              <p className="mt-20 text-sm text-zinc-400">
+              <p className="mt-10 text-sm text-zinc-400">
                 Our website is coming soon. For bookings & enquiries:
               </p>
-              <div className="space-y-2">
+              <div className="space-y-2 mt-10">
                 <p className="text-sm">
                   Email:{" "}
                   <a
                     href="mailto:yourmomentadelaide@gmail.com"
                     className="underline"
                   >
-                    hello@yourmomentadelaide.com.au
+                    yourmomentadelaide@gmail.com
                   </a>
                 </p>
                 <p className="text-sm">
