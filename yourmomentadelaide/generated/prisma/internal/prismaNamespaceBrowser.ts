@@ -81,6 +81,7 @@ export const InquiryScalarFieldEnum = {
   location: 'location',
   occasion: 'occasion',
   package: 'package',
+  theme: 'theme',
   message: 'message',
   createdAt: 'createdAt'
 } as const

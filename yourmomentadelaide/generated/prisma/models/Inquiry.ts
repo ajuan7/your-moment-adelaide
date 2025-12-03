@@ -44,6 +44,7 @@ export type InquiryMinAggregateOutputType = {
   location: string | null
   occasion: string | null
   package: string | null
+  theme: string | null
   message: string | null
   createdAt: Date | null
 }
@@ -58,6 +59,7 @@ export type InquiryMaxAggregateOutputType = {
   location: string | null
   occasion: string | null
   package: string | null
+  theme: string | null
   message: string | null
   createdAt: Date | null
 }
@@ -72,6 +74,7 @@ export type InquiryCountAggregateOutputType = {
   location: number
   occasion: number
   package: number
+  theme: number
   message: number
   createdAt: number
   _all: number
@@ -96,6 +99,7 @@ export type InquiryMinAggregateInputType = {
   location?: true
   occasion?: true
   package?: true
+  theme?: true
   message?: true
   createdAt?: true
 }
@@ -110,6 +114,7 @@ export type InquiryMaxAggregateInputType = {
   location?: true
   occasion?: true
   package?: true
+  theme?: true
   message?: true
   createdAt?: true
 }
@@ -124,6 +129,7 @@ export type InquiryCountAggregateInputType = {
   location?: true
   occasion?: true
   package?: true
+  theme?: true
   message?: true
   createdAt?: true
   _all?: true
@@ -225,6 +231,7 @@ export type InquiryGroupByOutputType = {
   location: string
   occasion: string
   package: string
+  theme: string | null
   message: string
   createdAt: Date
   _count: InquiryCountAggregateOutputType | null
@@ -262,6 +269,7 @@ export type InquiryWhereInput = {
   location?: Prisma.StringFilter<"Inquiry"> | string
   occasion?: Prisma.StringFilter<"Inquiry"> | string
   package?: Prisma.StringFilter<"Inquiry"> | string
+  theme?: Prisma.StringNullableFilter<"Inquiry"> | string | null
   message?: Prisma.StringFilter<"Inquiry"> | string
   createdAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
 }
@@ -276,6 +284,7 @@ export type InquiryOrderByWithRelationInput = {
   location?: Prisma.SortOrder
   occasion?: Prisma.SortOrder
   package?: Prisma.SortOrder
+  theme?: Prisma.SortOrderInput | Prisma.SortOrder
   message?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -293,6 +302,7 @@ export type InquiryWhereUniqueInput = Prisma.AtLeast<{
   location?: Prisma.StringFilter<"Inquiry"> | string
   occasion?: Prisma.StringFilter<"Inquiry"> | string
   package?: Prisma.StringFilter<"Inquiry"> | string
+  theme?: Prisma.StringNullableFilter<"Inquiry"> | string | null
   message?: Prisma.StringFilter<"Inquiry"> | string
   createdAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
 }, "id">
@@ -307,6 +317,7 @@ export type InquiryOrderByWithAggregationInput = {
   location?: Prisma.SortOrder
   occasion?: Prisma.SortOrder
   package?: Prisma.SortOrder
+  theme?: Prisma.SortOrderInput | Prisma.SortOrder
   message?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.InquiryCountOrderByAggregateInput
@@ -329,6 +340,7 @@ export type InquiryScalarWhereWithAggregatesInput = {
   location?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
   occasion?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
   package?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
+  theme?: Prisma.StringNullableWithAggregatesFilter<"Inquiry"> | string | null
   message?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Inquiry"> | Date | string
 }
@@ -342,6 +354,7 @@ export type InquiryCreateInput = {
   location: string
   occasion: string
   package: string
+  theme?: string | null
   message: string
   createdAt?: Date | string
 }
@@ -356,6 +369,7 @@ export type InquiryUncheckedCreateInput = {
   location: string
   occasion: string
   package: string
+  theme?: string | null
   message: string
   createdAt?: Date | string
 }
@@ -369,6 +383,7 @@ export type InquiryUpdateInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   occasion?: Prisma.StringFieldUpdateOperationsInput | string
   package?: Prisma.StringFieldUpdateOperationsInput | string
+  theme?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   message?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -383,6 +398,7 @@ export type InquiryUncheckedUpdateInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   occasion?: Prisma.StringFieldUpdateOperationsInput | string
   package?: Prisma.StringFieldUpdateOperationsInput | string
+  theme?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   message?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -397,6 +413,7 @@ export type InquiryCreateManyInput = {
   location: string
   occasion: string
   package: string
+  theme?: string | null
   message: string
   createdAt?: Date | string
 }
@@ -410,6 +427,7 @@ export type InquiryUpdateManyMutationInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   occasion?: Prisma.StringFieldUpdateOperationsInput | string
   package?: Prisma.StringFieldUpdateOperationsInput | string
+  theme?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   message?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -424,6 +442,7 @@ export type InquiryUncheckedUpdateManyInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   occasion?: Prisma.StringFieldUpdateOperationsInput | string
   package?: Prisma.StringFieldUpdateOperationsInput | string
+  theme?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   message?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -438,6 +457,7 @@ export type InquiryCountOrderByAggregateInput = {
   location?: Prisma.SortOrder
   occasion?: Prisma.SortOrder
   package?: Prisma.SortOrder
+  theme?: Prisma.SortOrder
   message?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -456,6 +476,7 @@ export type InquiryMaxOrderByAggregateInput = {
   location?: Prisma.SortOrder
   occasion?: Prisma.SortOrder
   package?: Prisma.SortOrder
+  theme?: Prisma.SortOrder
   message?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -470,6 +491,7 @@ export type InquiryMinOrderByAggregateInput = {
   location?: Prisma.SortOrder
   occasion?: Prisma.SortOrder
   package?: Prisma.SortOrder
+  theme?: Prisma.SortOrder
   message?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -510,6 +532,7 @@ export type InquirySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   location?: boolean
   occasion?: boolean
   package?: boolean
+  theme?: boolean
   message?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
@@ -524,6 +547,7 @@ export type InquirySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   location?: boolean
   occasion?: boolean
   package?: boolean
+  theme?: boolean
   message?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
@@ -538,6 +562,7 @@ export type InquirySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   location?: boolean
   occasion?: boolean
   package?: boolean
+  theme?: boolean
   message?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
@@ -552,11 +577,12 @@ export type InquirySelectScalar = {
   location?: boolean
   occasion?: boolean
   package?: boolean
+  theme?: boolean
   message?: boolean
   createdAt?: boolean
 }
 
-export type InquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "instagram" | "date" | "location" | "occasion" | "package" | "message" | "createdAt", ExtArgs["result"]["inquiry"]>
+export type InquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "instagram" | "date" | "location" | "occasion" | "package" | "theme" | "message" | "createdAt", ExtArgs["result"]["inquiry"]>
 
 export type $InquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Inquiry"
@@ -571,6 +597,7 @@ export type $InquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     location: string
     occasion: string
     package: string
+    theme: string | null
     message: string
     createdAt: Date
   }, ExtArgs["result"]["inquiry"]>
@@ -1005,6 +1032,7 @@ export interface InquiryFieldRefs {
   readonly location: Prisma.FieldRef<"Inquiry", 'String'>
   readonly occasion: Prisma.FieldRef<"Inquiry", 'String'>
   readonly package: Prisma.FieldRef<"Inquiry", 'String'>
+  readonly theme: Prisma.FieldRef<"Inquiry", 'String'>
   readonly message: Prisma.FieldRef<"Inquiry", 'String'>
   readonly createdAt: Prisma.FieldRef<"Inquiry", 'DateTime'>
 }
