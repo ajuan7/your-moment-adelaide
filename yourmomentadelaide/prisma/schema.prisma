@@ -23,6 +23,7 @@ model Inquiry {
   location    String
   occasion    String
   package     String
+  theme       String?
   message     String
   createdAt   DateTime @default(now())
 }

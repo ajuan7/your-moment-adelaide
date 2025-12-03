@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:db": "tsx src/app/tests/test-db.ts"
+    "test:db": "tsx src/app/tests/test-db.ts",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "-": "^0.0.1",
