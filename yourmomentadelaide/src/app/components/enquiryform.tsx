@@ -1,12 +1,45 @@
 "use client";
 
+import { useState } from "react";
+
 export function EnquiryForm() {
+
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const payload = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            instagram: formData.get("instagram"),
+            date: formData.get("date"),
+            location: formData.get("location"),
+            occasion: formData.get("occasion"),
+            package: formData.get("package"),
+            theme: formData.get("theme"),
+            message: formData.get("message"),
+        };
+
+        try {
+            const res = await fetch("/api/enquiry", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+        } catch (err) {
+            console.error(err);
+        }
+    }
     return (
         <form
             className="mt-6 space-y-4 rounded-2xl bg-black/50 border border-white/10 p-4 md:p-6 text-left"
-            onSubmit={(e) => {
-                e.preventDefault();
-            }}
+            onSubmit={handleSubmit}
         >
             <h3 className="text-sm font-semibold tracking-wide text-white uppercase">
                 Enquiry form

@@ -18,6 +18,7 @@ export async function POST(req: Request) {
             message,
         } = body;
 
+        // Validation for entries
         if (!name || !email || !phone || !date || !location || !occasion || !selectedPackage || !selectedTheme || !message) {
             return NextResponse.json(
                 { error: "Missing required fields."},
@@ -25,6 +26,7 @@ export async function POST(req: Request) {
             );
         }
 
+        // Parse date from String into Date
         const parsedDate = new Date(date);
         if (Number.isNaN(parsedDate.getTime())) {
             return NextResponse.json(
@@ -33,6 +35,7 @@ export async function POST(req: Request) {
             );
         }
 
+        // Create the row in the table
         await prisma.inquiry.create({
             data: {
                 name,
@@ -48,6 +51,7 @@ export async function POST(req: Request) {
             },
         });
         
+        // Catch response and error
         return NextResponse.json({ success: true }, { status: 201 });
         } catch (err) {
             console.error("[ENQUIRY_POST_ERROR]", err);
