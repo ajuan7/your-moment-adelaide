@@ -32,12 +32,22 @@ export function EnquiryForm() {
                 },
                 body: JSON.stringify(payload),
             });
+
+            
+            if (res.ok) {
+            form.reset();        
+            } else {
+            console.error("Failed to submit enquiry");
+            }
         } catch (err) {
             console.error(err);
         }
+
+        
     }
     return (
         <form
+            id="enquiryForm"
             className="mt-6 space-y-4 rounded-2xl bg-black/50 border border-white/10 p-4 md:p-6 text-left"
             onSubmit={handleSubmit}
         >
