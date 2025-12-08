@@ -8,12 +8,12 @@ export default async function AdminPage() {
 
     return (
         <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white px-4 py-24">
-            <div className={`flex-col items-center min-h-screen bg-gray text-white px-4 py-24 mx-auto max-w-3xl space-y-10`}>
+            <div className={`flex-col items-center min-h-screen bg-gray text-white px-4 py-24 mx-auto max-w-6xl space-y-10`}>
                 <h1 className={`${theSeasons.className} `}>Admin Dashboard</h1>
 
                 <div className="overflow-x-auto text-left rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
-                    <table className="min-w-full space-x-10 text-sm">
-                        <thead>
+                    <table className="min-w-full text-sm border-separate border-spacing-x-6 border-spacing-y-2">
+                        <thead className="bg-white/5 text-xs uppercase tracking-wide text-zinc-300">
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
