@@ -42,7 +42,7 @@ export default function Home() {
                 View packages
               </Link>
               <a
-                href="#contact"
+                href="contact"
                 className="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/10"
               >
                 Enquire now
@@ -52,27 +52,30 @@ export default function Home() {
               📍 Adelaide CBD and surrounds · Last-minute and same day options
             </p>
 
-            <div className="space-y-2 mt-10">
-              <p className="text-sm">
-                Email:{" "}
+            <div className="space-y-2 space-x-2 mt-10 flex flex-row justify-center">
                 <a
                   href="mailto:yourmomentadelaide@gmail.com"
                   className="underline"
                 >
-                  yourmomentadelaide@gmail.com
+                  <Image
+                    src="/icons/mail.png"
+                    alt="Email Logo"
+                    width={50}
+                    height={50}
+                  />
                 </a>
-              </p>
-              <p className="text-sm">
-                Instagram:{" "}
-                <a
-                  href="https://instagram.com/yourmomentadelaide"
-                  className="underline"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @yourmomentadelaide
-                </a>
-              </p>
+              <a
+                href="https://instagram.com/yourmomentadelaide"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/icons/instagram.png"
+                  alt="Instagram Logo"
+                  width={50}
+                  height={50}
+                />
+              </a>
             </div>
           </div>
         </div>
