@@ -6,6 +6,18 @@ export default async function AdminPage() {
         orderBy: {createdAt: "desc"},
     });
 
+
+    function formatDate(date: Date | null) {
+        if (!date) return "-";
+        return date.toLocaleString("en-AU", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white px-4 py-24">
             <div className={`flex-col items-center min-h-screen bg-gray text-white px-4 py-24 mx-auto max-w-6xl space-y-10`}>
@@ -35,13 +47,13 @@ export default async function AdminPage() {
                                     <td>{enquiry.email}</td>
                                     <td>{enquiry.phone}</td>
                                     <td>{enquiry.instagram}</td>
-                                    <td>-</td>
+                                    <td>{formatDate(enquiry.date)}</td>
                                     <td>{enquiry.location}</td>
                                     <td>{enquiry.occasion}</td>
                                     <td>{enquiry.package}</td>
                                     <td>{enquiry.theme}</td>
                                     <td>{enquiry.message}</td>
-                                    <td>-</td>
+                                    <td>{formatDate(enquiry.createdAt)}</td>
 
                                 </tr>
                             ))}
