@@ -15,6 +15,7 @@ export default function PackagesPage() {
             items={[
             ]}
             price="$280"
+            href="/packages/classic"
           />
 
           <PackageCard
@@ -23,15 +24,17 @@ export default function PackagesPage() {
             title="Signature Package"
             items={[
             ]}
-            price="$350"
+            price="$350"  
+            href="/packages/signature"
           />
 
           <PackageCard
             imageSrc="/proposal-package-demo.png"
-            title="Proposal Package"
+            title="Romance Package"
             items={[
             ]}
             price="$450"
+            href="/packages/romance"
           />
         </div>
       </div>

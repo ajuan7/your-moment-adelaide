@@ -34,7 +34,7 @@ export default function PackageClassicPage() {
                         </p>
                     </div>
                         <Link
-                            href="contact"
+                            href="/contact"
                             className="rounded-full bg-white px-5 py-2 text-xs font-semibold text-black shadow-sm transition hover:bg-zinc-100"
                         >
                             Enquire Now
