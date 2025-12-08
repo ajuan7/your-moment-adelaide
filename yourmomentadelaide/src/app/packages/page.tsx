@@ -1,10 +1,10 @@
 import { PackageCard } from "../components/packagecard";
-
+import { theSeasons } from "../fonts";
 export default function PackagesPage() {
   return (
-    <main className="min-h-screen bg-stone-50 text-white px-4 py-24">
+    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white px-4 py-24">
       <div className="mx-auto max-w-3xl space-y-10">
-        <h1 className="text-3xl text-center text-black font-semibold tracking-tight">
+        <h1 className={`${theSeasons.className} "text-2xl md:text-3xl lg:text-4xl text-center font-semibold tracking-tight`}>
           Our Packages
         </h1>
 
