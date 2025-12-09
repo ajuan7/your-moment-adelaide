@@ -1,3 +1,5 @@
+import { theSeasons } from "../fonts";
+
 export default function LoginPage() {
     return (
         <main className="min-h-screen bg-gray text-white px-4 py-24 text-center">
