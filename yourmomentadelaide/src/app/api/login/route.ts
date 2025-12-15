@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import { prisma } from "@/src/lib/prisma"; 
+import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
     try {
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
                 { status: 401}
             );
         }
-
+        console.log("test");
         const isValid = await bcrypt.compare(password, user.password);
 
         if (!isValid) {
@@ -35,7 +36,26 @@ export async function POST(req: Request) {
             );
         }
 
-        return NextResponse.json({success: true});
+        const token = jwt.sign(
+        {
+            sub: user.id,
+            email: user.email,
+            role: "admin",
+        },
+        process.env.JWT_SECRET as string,
+        { expiresIn: "7d" }
+        );
+
+        const res = NextResponse.redirect(new URL("/admin", req.url));
+        res.cookies.set("admin_token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            path: "/",
+            maxAge: 60 * 60 * 24 * 7, // 7 days
+        });
+
+        return res;
     } catch (err) {
         console.log("Login Error:", err);
         NextResponse.json(

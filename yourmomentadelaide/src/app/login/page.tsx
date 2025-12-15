@@ -8,7 +8,7 @@ export default function LoginPage() {
                     <h1>Account Login</h1>
                 </div>
                 <div className="flex flex-col space-x-10">
-                    <form method="post">
+                    <form action="/api/login" method="post">
                         <div className="text-center space-y-1">
                             <label htmlFor="email" className="block text-sm font-medium text-gray-200">
                                 Email
