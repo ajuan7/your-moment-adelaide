@@ -7,7 +7,7 @@ export default function PackageRomancePage() {
     return (
         <main className="min-h-screen bg-gray text-white px-4 py-24">
             <div className="mx-auto max-w-3xl space-y-10">
-                <h1 className={`${theSeasons.className} text-center text-white text-lg md:text-xl lg:text-2xl`}>
+                <h1 className={`${theSeasons.className} text-center text-white text-2xl md:text-3xl lg:text-4xl`}>
                     Romance Package
                 </h1>
 
